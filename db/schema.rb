@@ -59,12 +59,7 @@ ActiveRecord::Schema.define(version: 20170112084403) do
     t.date     "birthday"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
-
   create_table "websites", force: :cascade do |t|
-    t.string   "url"
-    t.integer  "view_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
