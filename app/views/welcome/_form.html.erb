@@ -1,28 +1,43 @@
 <!-- sign up form -->
-<%= form_for :user, method: :post do |form| %>
+<%= form_for :user, method: :post do |f| %>
+  <div class="text-field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control", placeholder: "First" %>
+  </div>
+  <br>
 
   <div class="text-field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Last" %>
   </div>
+  <br>
 
   <div class="text-field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", placeholder: "123@example.com" %>
   </div>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+  <br>
 
   <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Minimum 6, consist of alphabets and numbers (case sensitive)" %>
   </div>
+  <br>
 
+  <div class="text-field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number,class: "form-control" %>
+  </div>
+  <br>
+
+  <div class="text-field">
+    <%= f.label :information %>
+    <%= f.text_area :information,class: "form-control", placeholder: "About me" %>
+  </div>
+  <br>
+
+  <hr>
   <div class="submit-field">
-    <%= form.submit %>
+    <%= f.submit "Sign Up", class: "btn btn-primary, col-sm-12" %>
   </div>
-
-
 <% end %>
