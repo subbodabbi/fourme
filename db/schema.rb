@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170113012501) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
+
     t.string   "email",                                      null: false
     t.string   "encrypted_password", limit: 128,             null: false
     t.string   "confirmation_token", limit: 128
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170113012501) do
     t.string   "gender"
     t.date     "birthday"
     t.integer  "user_type",                      default: 0
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
