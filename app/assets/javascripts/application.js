@@ -15,3 +15,27 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function(){
+	$("#popup01").click(function(event){
+		event.preventDefault();
+		$('#myModal1').modal('toggle')
+	})
+
+})
+
+$(document).ready(function(){
+	$("#popup02").click(function(event){
+		event.preventDefault();
+		$('#myModal2').modal('toggle')
+	})
+
+})
+
+$(document).ready(function(){
+	$("#popup03").click(function(event){
+		event.preventDefault();
+		$('#myModal3').modal('toggle')
+	})
+
+})

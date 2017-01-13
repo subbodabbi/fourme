@@ -1,4 +1,4 @@
-<!-- This is nav bar -->
+This is nav bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,29 +14,66 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+      <% if signed_in? %>
         <li>
-          <a href="https://blackrockdigital.github.io/startbootstrap-modern-business/about.html">About</a>
+          <img src="http://lorempixel.com/400/200/sports">Sign up</a>
         </li>
-        <li class="dropdown">
-          <a href="https://blackrockdigital.github.io/startbootstrap-modern-business/#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="https://blackrockdigital.github.io/startbootstrap-modern-business/full-width.html">Sign Up</a>
-          	</li>
-          	<li>
-              <a href="https://blackrockdigital.github.io/startbootstrap-modern-business/sidebar.html">Login</a>
-          	</li>
-          	<li>
-              <a href="https://blackrockdigital.github.io/startbootstrap-modern-business/faq.html">Contact Us</a>
-          	</li>
-          </ul>
+        <li>
+          <a href="#" id="popup02">Edit Profile</a>
         </li>
+        <li>
+          <a href="#" id="popup03">Log Out</a>
+        </li>
+        
+      <% else %>
+        <li>
+          <a href="#" id="popup01">Sign up</a>
+        </li>
+        <li>
+          <a href="#" id="popup02">Log in</a>
+        </li>
+        <li>
+          <a href="#" id="popup03">About Us</a>
+        </li>
+      <% end %>
       </ul>
     </div>
       <!-- /.navbar-collapse -->
   </div>
   <!-- /.container -->
 </nav>
+
+
+<!-- modules for sign up -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= render partial: '/welcome/form' %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+<!--  -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>
+
+<!-- end Modal -->
 
 <!-- This is slide header -->
 <!-- Slide header Header -->
@@ -95,6 +132,7 @@
 </div>
 <!-- /.container -->
 
+
 <!-- This is 4 boxes container -->
 <div class="container">
 
@@ -133,28 +171,72 @@
 
   <!-- Projects Row -->
   <div class="row">
-      <div class="col-md-6 portfolio-item">
-          <a href="#">
-              <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-          </a>
-          <h3>
-              <a href="#">Photography</a>
-          </h3>
-          <p>Discover new platforms about photography here</p>
-      </div>
-      <div class="col-md-6 portfolio-item">
-          <a href="#">
-              <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-          </a>
-          <h3>
-              <a href="#">Science</a>
-          </h3>
-          <p>Discover new platforms about science here</p>
-      </div>
+    <div class="col-md-6 portfolio-item">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+      <h3>
+        <a href="#">Photography</a>
+      </h3>
+      <p>Discover new platforms about photography here</p>
+    </div>
+    <div class="col-md-6 portfolio-item">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+      <h3>
+        <a href="#">Science</a>
+      </h3>
+      <p>Discover new platforms about science here</p>
+    </div>
   </div>
   <!-- /.row -->
   <hr>
   <hr>
+<!-- /.test container -->
+  <div class="row">
+    <div class="portfolio-box">
+
+  		<div class="container-box">
+  		  <div class="col-xs-6">
+  		    <div class="carousel slide" id="myCarousel-box1"> 		      
+  		      <div class="carousel-inner">
+  		        <div class="box">
+  		          
+  		           	<a href="#">
+  	              	<img class="img-responsive" src="http://placehold.it/700x400" alt="">
+  								</a>
+  							
+  		        </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel-box1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>  
+            <a class="right carousel-control" href="#myCarousel-box1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-">
+        <div class="col-xs-6">
+          <div class="carousel slide" id="myCarousel-box2">  
+            <div class="carousel-inner">
+  		        <div class="box">
+  		  
+  		           	<a href="#">
+  	              	<img class="img-responsive" src="http://placehold.it/700x400" alt="">
+  								</a>
+  							
+  		        </div>
+  		      </div>
+  		      <a class="left carousel-control" href="#myCarousel-box2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#myCarousel-box2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+  		    </div>
+  		  </div>
+  		</div>
+
+  	</div>
+  </div>
+<!-- /.test container -->
+<!-- /.container -->
 
   <!-- Footer -->
   <footer>
@@ -167,4 +249,4 @@
   </footer>
 
 </div>
-<!-- /.container -->
+<!-- /.container

@@ -1,7 +1,7 @@
 class UsersController < Clearance::PasswordsController
 
 before_action :find_user, only: [:show, :edit, :update]
-respond_to :html, :js
+# respond_to :html, :js
 
   def new
     @user = User.new
@@ -12,16 +12,30 @@ respond_to :html, :js
 
   def edit
   end
- 
+
   def create
-    @user = User.new(user_params)
-      if @user.save
-        flash[:notice] = "Sucessfully registered to 4Me!"
-        redirect_back_or url_after_create
-      else
-        respond_with( @user, :layout => !request.xhr? )
-      end
+    @user = User.new(user_from_params)
+
+    if @user.save
+      sign_in @user
+      redirect_back_or url_after_create
+    else
+      redirect_back_or url_after_create
+    end
   end
+ 
+  # def create
+  #   @user = User.new(user_params)
+
+  #   if @user.save
+  #     sign_in @user
+  #     render template: "welcome/index"
+  #   else
+  #     render template: "welcome/index"  
+  #   end
+  # end
+
+
 
   def update
     if @user.update(user_params)
@@ -39,7 +53,7 @@ respond_to :html, :js
 
 private
 
- def user_params
+ def user_from_params
    params.require(:user).permit(:type, :email, :password, :first_name, :last_name, :information, :phone_number, :address, :gender, :birthday)
  end
 
