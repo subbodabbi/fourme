@@ -18,10 +18,12 @@ before_action :find_user, only: [:show, :edit, :update]
 
     if @user.save
       sign_in @user
-      redirect_to root_path
+      p "success!"
+      redirect_to home_path
     else
-      redirect_back_or url_after_create
-    end
+      p "error"
+     redirect_to home_path
+   end
   end
  
   # def create
