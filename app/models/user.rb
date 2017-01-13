@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :websites
   enum user_type: [:user, :partner, :admin]
+  mount_uploader :avatar, AvatarUploader  
 
 end
