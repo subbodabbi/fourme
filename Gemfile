@@ -32,8 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# For login/signup clearance
+# For login/signup
 gem 'clearance'
+gem 'country_select'
 
 # To keep certain information safe
 gem 'figaro'
