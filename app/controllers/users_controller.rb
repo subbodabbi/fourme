@@ -18,7 +18,7 @@ before_action :find_user, only: [:show, :edit, :update]
 
     if @user.save
       sign_in @user
-      redirect_back_or url_after_create
+      redirect_to root_path
     else
       redirect_back_or url_after_create
     end
