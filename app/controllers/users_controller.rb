@@ -15,7 +15,6 @@ before_action :find_user, only: [:show, :edit, :update]
 
   def create
     @user = User.new(user_from_params)
-
     if @user.save
       sign_in @user
       p "success!"
