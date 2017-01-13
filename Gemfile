@@ -45,6 +45,12 @@ gem 'acts-as-taggable-on'
 # For asynchronous forms (ajax forms)
 gem 'responders', '~> 2.0'
 
+# For image upload
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
