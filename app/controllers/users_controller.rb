@@ -18,22 +18,14 @@ before_action :find_user, only: [:show, :edit, :update]
 
     if @user.save
       sign_in @user
-      redirect_to root_path
+      p "success!"
+      redirect_to home_path
     else
-      redirect_back_or url_after_create
-    end
+      p "error"
+     redirect_to home_path
+   end
   end
- 
-  # def create
-  #   @user = User.new(user_params)
 
-  #   if @user.save
-  #     sign_in @user
-  #     render template: "welcome/index"
-  #   else
-  #     render template: "welcome/index"  
-  #   end
-  # end
 
 
 
@@ -46,6 +38,8 @@ before_action :find_user, only: [:show, :edit, :update]
       render :edit
     end
   end
+
+
 
   def find_user
     @user = User.find(params[:id])
