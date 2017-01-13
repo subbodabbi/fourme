@@ -19,10 +19,10 @@
           <img src="http://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/63567723_93122725652a2a8ebbabf4.png" style="height: 50px; width: 50px; border-radius: 100px;">Avatar</a>
         </li>
         <li>
-          <a href="#" id="popup02">Edit Profile</a>
+          <a href="#" id="popup04">Edit Profile</a>
         </li>
         <li>
-          <a href="#" id="popup03">Log Out</a>
+          <%= link_to "Log Out", sign_out_path, method: :delete %>
         </li>
         
       <% else %>
@@ -73,6 +73,13 @@
   </div>
 </div>
 
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- render edit profile here -->
+    </div>
+  </div>
+</div>
 <!-- end Modal -->
 
 <!-- This is slide header -->
